@@ -1,13 +1,13 @@
 import "./App.css";
 
-const initialList = [
+const initialItems = [
   {
-    drscription: "socks",
+    drscription: "Socks",
     isPacked: false,
     quantity: 2,
   },
   {
-    drscription: "charger",
+    drscription: "Charger",
     isPacked: false,
     quantity: 1,
   },
@@ -18,7 +18,7 @@ function App() {
     <div className="app">
       <Logo />
       <Form />
-      <PackageList list={initialList} />
+      <PackageList initialItems={initialItems} />
       <Footer />
     </div>
   );
@@ -38,19 +38,26 @@ function Form() {
   );
 }
 
-function PackageList({ list }) {
+function PackageList({ initialItems }) {
   return (
     <ul className="list">
-      {list.map((list) => <Item list={list} />)}
+      {initialItems.map((item) => (
+        <Item item={item} />
+      ))}
     </ul>
   );
 }
 
-function Item({list}) {
-  return <li>{list.drscription}</li>;
+function Item({ item }) {
+  return (
+    <li className="item">
+      <span>
+        {item.quantity} {item.drscription}
+      </span>
+      <button>❌</button>
+    </li>
+  );
 }
-
-
 
 function Footer() {
   return (

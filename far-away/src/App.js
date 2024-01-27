@@ -1,11 +1,24 @@
 import "./App.css";
 
+const initialList = [
+  {
+    drscription: "socks",
+    isPacked: false,
+    quantity: 2,
+  },
+  {
+    drscription: "charger",
+    isPacked: false,
+    quantity: 1,
+  },
+];
+
 function App() {
   return (
     <div className="app">
       <Logo />
       <Form />
-      <PackageList />
+      <PackageList list={initialList} />
       <Footer />
     </div>
   );
@@ -14,18 +27,30 @@ function App() {
 export default App;
 
 function Logo() {
-  return <h1>⛵ Far Away 🌴</h1>;
+  return <h1 className="logo">⛵ Far Away 🌴</h1>;
 }
 
 function Form() {
-	return <div>
-	  <h3>What do you need for you trip? 🚢</h3>
-  </div>;
+  return (
+    <form className="form">
+      <h3>What do you need for you trip? 🚢</h3>
+    </form>
+  );
 }
 
-function PackageList() {
-  return <div className="list">list</div>;
+function PackageList({ list }) {
+  return (
+    <ul className="list">
+      {list.map((list) => <Item list={list} />)}
+    </ul>
+  );
 }
+
+function Item({list}) {
+  return <li>{list.drscription}</li>;
+}
+
+
 
 function Footer() {
   return (

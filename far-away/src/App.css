@@ -135,9 +135,16 @@ h6 {
   justify-content: space-evenly;
 }
 
+.item {
+	display: flex;
+	gap: 5px;
+}
+
+.item input{
+	zoom: 1.5;
+}
 .item button {
   background-color: transparent;
-  padding-left: 5px;
 }
 
 .footer {

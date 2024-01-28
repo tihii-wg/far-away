@@ -3,7 +3,7 @@ export function Item({ item }) {
     <li className="item">
       <input type="checkbox" />
       <span style={item.isPacked ? { textDecoration: "line-through" } : {}}>
-        {item.quantity} {item.drscription}
+        {item.quantity} {item.description}
       </span>
       <button>❌</button>
     </li>

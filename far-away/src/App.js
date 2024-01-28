@@ -3,15 +3,18 @@ import { Footer } from "./Footer";
 import { Form } from "./Form";
 import { Logo } from "./Logo";
 import { PackageList } from "./PackageList";
+import { v1 } from "uuid";
 
 const initialItems = [
   {
-    drscription: "Socks",
+    id: v1(),
+    description: "Socks",
     isPacked: false,
     quantity: 2,
   },
   {
-    drscription: "Charger",
+    id: v1(),
+    description: "Charger",
     isPacked: true,
     quantity: 1,
   },

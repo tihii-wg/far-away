@@ -12,10 +12,9 @@ const initialItems = [
   },
   {
     drscription: "Charger",
-    isPacked: false,
+    isPacked: true,
     quantity: 1,
-	},
- 
+  },
 ];
 
 function App() {

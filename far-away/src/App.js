@@ -10,7 +10,7 @@ const initialItems = [
   {
     id: v1(),
     description: "Socks",
-    isPacked: false,
+    isPacked: true,
     quantity: 2,
   },
   {
@@ -35,17 +35,30 @@ function App() {
     }
   };
 
+  const remooveItem = (id) => {
+    setItems(items.filter((i) => i.id !== id));
+  };
+
   const toggleIsPacked = (id) => {
     let item = initialItems.filter((i) => i.id === id);
     setItems([...items, (item.isPacked = !item.isPacked)]);
   };
 
+  let isPackedItemsQuantity = items.filter((i) => i.isPacked);
+
   return (
     <div className="app">
       <Logo />
       <Form addNewItem={addNewItem} />
-      <PackageList initialItems={items} toggleIsPacked={toggleIsPacked} />
-      <Footer />
+      <PackageList
+        initialItems={items}
+        toggleIsPacked={toggleIsPacked}
+        remooveItem={remooveItem}
+      />
+      <Footer
+        items={items.length}
+        isPackedItemsQuantity={isPackedItemsQuantity.length}
+      />
     </div>
   );
 }

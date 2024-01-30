@@ -15,6 +15,11 @@ export function Form({ addNewItem }) {
   const onChangeSelectValue = (e) => {
     setQuantity(Number(e.target.value));
   };
+  const addNewItemHandler = () => {
+    addNewItem(quantity, description);
+    setDescription("");
+    setQuantity(1);
+  };
   return (
     <form className="form" onSubmit={handleSubmit}>
       <h3>What do you need for you trip? 🚢</h3>
@@ -31,14 +36,7 @@ export function Form({ addNewItem }) {
         value={description}
         onChange={onChangeInputValue}
       />
-      <button
-        onClick={() => {
-          addNewItem(quantity, description);
-          setDescription("");
-        }}
-      >
-        ADD
-      </button>
+      <button onClick={addNewItemHandler}>ADD</button>
     </form>
   );
 }

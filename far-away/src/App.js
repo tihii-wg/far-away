@@ -10,7 +10,7 @@ const initialItems = [
   {
     id: v1(),
     description: "Socks",
-    isPacked: true,
+    isPacked: false,
     quantity: 2,
   },
   {
@@ -36,12 +36,16 @@ function App() {
   };
 
   const remooveItem = (id) => {
-    setItems(items.filter((i) => i.id !== id));
+    setItems((items) => items.filter((i) => i.id !== id));
   };
 
-  const toggleIsPacked = (id) => {
-    let item = initialItems.filter((i) => i.id === id);
-    setItems([...items, (item.isPacked = !item.isPacked)]);
+  const isPackedToogleItem = (id, isPacked) => {
+    // let item = items.find((i) => i.id === id);
+    // item.isPacked = isPacked;
+    // setItems([...items]);
+    setItems((items) =>
+      items.map((i) => (i.id === id ? { ...i, isPacked } : i))
+    );
   };
 
   let isPackedItemsQuantity = items.filter((i) => i.isPacked);
@@ -52,8 +56,8 @@ function App() {
       <Form addNewItem={addNewItem} />
       <PackageList
         initialItems={items}
-        toggleIsPacked={toggleIsPacked}
         remooveItem={remooveItem}
+        isPackedToogleItem={isPackedToogleItem}
       />
       <Footer
         items={items.length}

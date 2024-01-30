@@ -1,7 +1,18 @@
-export function Item({ item, toggleIsPacked, remooveItem }) {
+import { useState } from "react";
+
+export function Item({ item, remooveItem, toggleIsPacked }) {
+
   return (
     <li className="item">
-      <input type="checkbox" onChange={toggleIsPacked} />
+      <input
+			  type="checkbox"
+			  value={item.isPacked}
+        onChange={(e) => {
+			 toggleIsPacked(item.id,e.currentTarget.checked);
+        }}
+        onClick={() => {
+        }}
+      />
       <span style={item.isPacked ? { textDecoration: "line-through" } : {}}>
         {item.quantity} {item.description}
       </span>

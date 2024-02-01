@@ -39,12 +39,14 @@ function App() {
     setItems((items) => items.filter((i) => i.id !== id));
   };
 
-  const isPackedToogleItem = (id, isPacked) => {
-    // let item = items.find((i) => i.id === id);
-    // item.isPacked = isPacked;
-    // setItems([...items]);
+  const toogleIsPacked = (id, isPacked) => {
+    // let item = items.find((item) => item.id === id);
+    // if (item) {
+    //   item.isPacked = isPacked;
+    //   setItems((items) => [...items]);
+    // }
     setItems((items) =>
-      items.map((i) => (i.id === id ? { ...i, isPacked } : i))
+      items.map((item) => (item.id === id ? { ...item, isPacked } : item))
     );
   };
 
@@ -55,9 +57,9 @@ function App() {
       <Logo />
       <Form addNewItem={addNewItem} />
       <PackageList
-        initialItems={items}
+        items={items}
         remooveItem={remooveItem}
-        isPackedToogleItem={isPackedToogleItem}
+        toogleIsPacked={toogleIsPacked}
       />
       <Footer
         items={items.length}

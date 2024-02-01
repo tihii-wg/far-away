@@ -1,16 +1,14 @@
-import { useState } from "react";
-
-export function Item({ item, remooveItem, toggleIsPacked }) {
-
+export function Item({ item, remooveItem, toogleIsPacked }) {
+  const toogleIsPackedHandler = (id, isPacked) => {
+	toogleIsPacked(id, isPacked);
+  };
   return (
     <li className="item">
       <input
-			  type="checkbox"
-			  value={item.isPacked}
+        type="checkbox"
+        checked={item.isPacked}
         onChange={(e) => {
-			 toggleIsPacked(item.id,e.currentTarget.checked);
-        }}
-        onClick={() => {
+          toogleIsPackedHandler(item.id, e.currentTarget.checked);
         }}
       />
       <span style={item.isPacked ? { textDecoration: "line-through" } : {}}>

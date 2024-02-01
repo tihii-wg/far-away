@@ -1,13 +1,13 @@
 import { Item } from "./Item";
 
-export function PackageList({ initialItems, isPackedToogleItem, remooveItem }) {
+export function PackageList({ items, toogleIsPacked, remooveItem }) {
   return (
     <ul className="list">
-      {initialItems.map((item) => (
+      {items.map((item) => (
         <Item
           key={item.id}
           item={item}
-          toggleIsPacked={isPackedToogleItem}
+          toogleIsPacked={toogleIsPacked}
           remooveItem={remooveItem}
         />
       ))}

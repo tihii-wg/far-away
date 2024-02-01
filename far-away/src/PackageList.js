@@ -14,8 +14,12 @@ export function PackageList({ items, toogleIsPacked, remooveItem }) {
         ))}
       </ul>
       <div className="buttons">
-        <button >reset</button>
-        <select >sort by</select>
+        <button >Clear list.</button>
+			  <select >
+				  <option>Sort by input order.</option>
+				  <option>Sort by description.</option>
+				  <option>Sort by packed staus.</option>
+		  </select>
       </div>
     </>
   );

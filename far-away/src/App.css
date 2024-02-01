@@ -161,12 +161,14 @@ padding: 10px 0px;
 .buttons button{
 	background-color: #f3c776;
 	border-radius: 30px;
-
+width: 120px;
+font-size: 18px;
 }
 
 .buttons select{
 	background-color: #f3c776;
 	border-radius: 30px;
+	font-size: 18px;
 
 }
 

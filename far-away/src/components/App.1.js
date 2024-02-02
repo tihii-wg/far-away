@@ -1,28 +1,20 @@
-import "./App.css";
 import { Footer } from "./Footer";
 import { Form } from "./Form";
 import { Logo } from "./Logo";
 import { PackageList } from "./PackageList";
 import { v1 } from "uuid";
 import { useState } from "react";
+import { INPUT, DESCRIPTION, PACKED } from "../constantes/INPUT";
+import { initialItems } from "./App";
 
-const initialItems = [
-  {
-    id: v1(),
-    description: "Socks",
-    isPacked: false,
-    quantity: 2,
-  },
-  {
-    id: v1(),
-    description: "Charger",
-    isPacked: false,
-    quantity: 1,
-  },
-];
-
-function App() {
+export function App() {
   const [items, setItems] = useState(initialItems);
+  const [sortBy, setSortBy] = useState("input");
+
+  let sortedItems;
+  if (sortBy === INPUT) sortedItems = items;
+  if (sortBy === DESCRIPTION);
+  if (sortBy === PACKED);
 
   const addNewItem = (quantity, description) => {
     if (description) {
@@ -57,9 +49,11 @@ function App() {
       <Logo />
       <Form addNewItem={addNewItem} />
       <PackageList
-        items={items}
+        items={sortedItems}
         remooveItem={remooveItem}
         toogleIsPacked={toogleIsPacked}
+        sortBy={sortBy}
+        setSortBy={setSortBy}
       />
       <Footer
         items={items.length}
@@ -68,5 +62,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

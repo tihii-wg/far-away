@@ -112,14 +112,14 @@ h6 {
   border-radius: 30px;
 }
 
-.form select{
-	background-color: #f3c776;
-	height: 35px;
-	width: 60px;
-	padding-left: 10px;
-	font-size: 15px;
-	font-family: serif;
-	border-radius: 30px;
+.form select {
+  background-color: #f3c776;
+  height: 35px;
+  width: 60px;
+  padding-left: 10px;
+  font-size: 15px;
+  font-family: serif;
+  border-radius: 30px;
 }
 
 .list {
@@ -136,40 +136,40 @@ h6 {
 }
 
 .item {
-	flex-grow:initial;
-	display: flex;
-	gap: 5px;
+  flex-grow: initial;
+  display: flex;
+  gap: 5px;
 }
 
-.item input{
-	zoom: 1.5;
+.item input {
+  zoom: 1.5;
 }
 .item button {
   background-color: transparent;
 }
 
-.buttons{
-display: flex;
-flex-direction: row-reverse;
-gap: 20px;
-justify-content: center;
-background-color: #613619;
-height: 60px;
-padding: 10px 0px;
+.buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 20px;
+  justify-content: center;
+  background-color: #613619;
+  height: 60px;
+  padding: 10px 0px;
 }
 
-.buttons button{
-	background-color: #f3c776;
-	border-radius: 30px;
-width: 120px;
-font-size: 18px;
+.buttons button {
+  background-color: #f3c776;
+  border-radius: 30px;
+  width: 120px;
+  font-size: 18px;
 }
 
-.buttons select{
-	background-color: #f3c776;
-	border-radius: 30px;
-	font-size: 18px;
-
+.buttons select {
+  background-color: #f3c776;
+  border-radius: 30px;
+  font-size: 18px;
+  padding-left: 30px;
 }
 
 .footer {

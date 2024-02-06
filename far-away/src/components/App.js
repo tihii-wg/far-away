@@ -28,13 +28,12 @@ function App() {
   const [items, setItems] = useState(initialItems);
   const [sortBy, setSortBy] = useState("INPUT");
 
- 
-
   const addNewItem = (quantity, description) => {
     if (description) {
       let newItem = {
         id: v1(),
         description,
+        isPacked: false,
         quantity,
       };
       setItems([...items, newItem]);
@@ -56,12 +55,25 @@ function App() {
     );
   };
 
-	let isPackedItemsQuantity = items.filter((i) => i.isPacked);
+  const claerItemsList = () => {
+    let confirmed = window.confirm(
+      "Are  you sure you want to delete the entire list?"
+    );
+    if (confirmed) setItems([]);
+  };
 
-	let sortedItems;
-	if (sortBy === INPUT) sortedItems = items;
-	if (sortBy === DESCRIPTION) sortedItems.slice().sort((a,b)=>);
-	if (sortBy === PACKED);
+  let isPackedItemsQuantity = items.filter((i) => i.isPacked);
+
+  let sortedItems;
+  if (sortBy === INPUT) sortedItems = items;
+  if (sortBy === DESCRIPTION)
+    sortedItems = items
+      .slice()
+      .sort((a, b) => a.description.localeCompare(b.description));
+  if (sortBy === PACKED)
+    sortedItems = items
+      .slice()
+      .sort((a, b) => Number(a.isPacked) - Number(b.isPacked));
 
   return (
     <div className="app">
@@ -73,6 +85,7 @@ function App() {
         toogleIsPacked={toogleIsPacked}
         sortBy={sortBy}
         setSortBy={setSortBy}
+        claerItemsList={claerItemsList}
       />
       <Footer
         items={items.length}

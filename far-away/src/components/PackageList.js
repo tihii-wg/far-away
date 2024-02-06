@@ -6,6 +6,7 @@ import { PACKED } from "../constantes/PACKED";
 export function PackageList({
   items,
   toogleIsPacked,
+  claerItemsList,
   remooveItem,
   setSortBy,
   sortBy,
@@ -27,7 +28,7 @@ export function PackageList({
         ))}
       </ul>
       <div className="buttons">
-        <button>Clear list.</button>
+        <button onClick={claerItemsList}>Clear list.</button>
         <select value={sortBy} onChange={sortByHandler}>
           <option value={INPUT}>Sort by input order.</option>
           <option value={DESCRIPTION}>Sort by description.</option>

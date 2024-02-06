@@ -19,12 +19,14 @@ export function PackageList({
     <>
       <ul className="list">
         {items.map((item) => (
-          <Item
-            key={item.id}
-            item={item}
-            toogleIsPacked={toogleIsPacked}
-            remooveItem={remooveItem}
-          />
+          <div>
+            <Item
+              key={item.id}
+              item={item}
+              toogleIsPacked={toogleIsPacked}
+              remooveItem={remooveItem}
+            />
+          </div>
         ))}
       </ul>
       <div className="buttons">

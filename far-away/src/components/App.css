@@ -123,27 +123,28 @@ h6 {
 }
 
 .list {
-  display: flex;
-  align-content: stretch;
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: 300px 300px 300px 300px 300px;
+  grid-template-rows: auto;
+  justify-items: start;
+  padding: 40px 100px 0px 100px;
   color: bisque;
   background-color: #613619;
-  font-size: 18px;
+  font-size: 20px;
   flex: 1 1 auto;
-  padding-top: 40px;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
 }
 
 .item {
-  flex-grow: initial;
-  display: flex;
-  gap: 5px;
+	display: flex;
+	gap:5px;
 }
 
 .item input {
   zoom: 1.5;
+  padding-top: 10px;
+  border: none;
 }
+
 .item button {
   background-color: transparent;
 }
